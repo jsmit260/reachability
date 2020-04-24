@@ -15,7 +15,7 @@ from collections import OrderedDict
 print('Scanning from:\n')
 os.system("ifconfig")
 os.system("updatedb")
-os.system("sed -i 's/logger.debug/#&/' $(locate masscan.py)")
+#os.system("sed -i 's/logger.debug/#&/' $(locate masscan.py)")
 time.sleep(2)
 
 def get_ranges():
