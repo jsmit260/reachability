@@ -13,7 +13,7 @@ Are the target ranges reachable?
 This answers....Are the target ranges reachable?
 
 # USE THE SHORT WAY:
-> sudo git clone https://github.com/jsmit260/reachability.git && cd reachability&&sudo chmod 755 setup.sh && ./setup.sh && echo "127.0.0.1/32" >> targets.list && echo "127.0.0.1/32" >> targets.list && sudo ./reachy.py targets.list
+> sudo git clone https://github.com/jsmit260/reachability.git && cd reachability&&sudo chmod 755 setup.sh && ./setup.sh && ifconfig | grep 'inet ' | grep -v 127 | cut -d ' ' -f 10 > targets.list >> targets.list && sudo ./reachy.py targets.list
 
 
 # USE THE LONG WAY:
