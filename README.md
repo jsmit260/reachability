@@ -14,7 +14,7 @@ Steps for use:
 
 git clone https://github.com/jsmit260/reachability.git
 
-cd into directory
+cd reachability
 
 chmod 755 setup.sh
 
