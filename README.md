@@ -18,9 +18,9 @@ chmod 755 setup.sh
 ./setup.sh
 
 --Create a line seperated list of target IP Ranges IE--
-ip.x.x.x/24
-ip.x.x.x/31
-ip.x.x.x/23
+\nip.x.x.x/24\n
+ip.x.x.x/31\n
+ip.x.x.x/23\n
 
 Then:
 ./fast-portsweep.py [target.list]
