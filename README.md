@@ -8,7 +8,7 @@ THIS IS PYTHON WRAPPED AROUND MASSCAN (https://github.com/robertdavidgraham/mass
 Are the target ranges reachable?
 
 # FAST-PORTSWEEP.PY
-These script is made with the assumption that you are on a debian based linux distro.
+This script is made with the assumption that you are on a debian based linux distro.
 
 Steps for use:
 
@@ -19,7 +19,7 @@ cd into directory
 chmod 755 setup.sh
 
 ./setup.sh
-
+(This script makes sure you have everything you need to run fast-portsweep.py)
 Create a line seperated list of target IP Ranges.
 
 
