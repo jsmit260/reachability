@@ -12,22 +12,27 @@ This script is made with the assumption that you are on a debian based linux dis
 
 # Steps for use (The LONG Way):
 
-sudo git clone https://github.com/jsmit260/reachability.git
+>sudo git clone https://github.com/jsmit260/reachability.git
 
-cd reachability
+>cd reachability
 
-sudo chmod 755 setup.sh
+>sudo chmod 755 setup.sh
 
-# sudo ./setup.sh
+> sudo ./setup.sh
+
 (This script makes sure you have everything you need to run fast-portsweep.py)
 
 Create a line seperated list of target IP Ranges (IE: x.x.x.x/24).
+> echo "127.0.0.1/32" >> targets.list
+> echo "192.168.1.1/32" >> targets.list
 
+Fire at will:
+>sudo ./fast-portsweep.py targets.list
 
 # OR THE SHORT WAY
-> sudo git clone https://github.com/jsmit260/reachability.git&&cd reachability&&sudo chmod 755 setup.sh
+> sudo git clone https://github.com/jsmit260/reachability.git&&cd reachability&&sudo chmod 755 setup.sh && echo "127.0.0.1/32" >> targets.list && echo "192.168.1.1/32" >> targets.list;sudo ./fast-portsweep.py targets.list
 
->sudo ./fast-portsweep.py [target.list]
+
 
 # FOLLOW THE DOGE TO WATCH THE DEMO (click on the dog)
 [![Watch the video](https://i.imgur.com/EVvpwLb.jpg)](https://www.youtube.com/watch?v=EpbwpMsnZDI)
