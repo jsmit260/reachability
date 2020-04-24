@@ -70,8 +70,8 @@ for k,v in range_resultz.items():
     
 #print(range_resultz)
 df2 = pd.Series(range_resultz)
-print(tabulate(df2.sort_values(),headers=('IP Range', 'Live Nodes'),tablefmt='grid'))
-content2 =tabulate(df2.sort_values(),headers=('IP Range','Live Nodes'),tablefmt='tsv')
+print(tabulate(df2.sort_index(),headers=('IP Range', 'Live Nodes'),tablefmt='grid'))
+content2 =tabulate(df2.sort_index(),headers=('IP Range','Live Nodes'),tablefmt='tsv')
 
  
 
