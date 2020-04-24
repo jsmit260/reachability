@@ -25,7 +25,7 @@ Create a line seperated list of target IP Ranges.
 Then:
 ./fast-portsweep.py [target.list]
 
-#-- FOLLOW THE DOGE TO WATCH THE DEMO --
+# FOLLOW THE DOGE TO WATCH THE DEMO (click on the dog)
 [![Watch the video](https://i.imgur.com/EVvpwLb.jpg)](https://www.youtube.com/watch?v=EpbwpMsnZDI)
 
 
