@@ -5,6 +5,8 @@
 THIS IS PYTHON WRAPPED AROUND MASSCAN (https://github.com/robertdavidgraham/masscan)
 # -- END DISCLAIMER--
 
+These scripts assume you are on a debian linux distro and have internet access
+
 Are the target ranges reachable?
 
 # FAST-PORTSWEEP.PY
