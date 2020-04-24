@@ -11,8 +11,13 @@ from collections import OrderedDict
 #making a dictionary to store a list
 #KEY = IP Address
 #Values = [transport_protocol,up_ports_list]
-if len(sys.argv[1]) <= 0:
-    print('USAGE: ./reachy.py [TARGET_RANGES_LINE_SEPERATED_LIST_FILE_NAME] [CUSTOM RATE, ELSE 10k PPS Default]\n\n\n')
+if len(sys.argv) == 2:
+    print("You are scanning ranges in file named: ",sys.argv[1])
+elif len(sys.argv) == 3:
+    print("You are scanning at your selected rate of: ", sys.argv[2], " packets per second.")
+else:
+    print('USAGE: ./reachy.py [TARGET_RANGES_LINE_SEPERATED_LIST_FILE_NAME] [CUSTOM RATE, ELSE 10k PPS by DEFAULT]\n\n\n')
+    
 print('Scanning from:\n')
 os.system("ifconfig")
 os.system("updatedb")
