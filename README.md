@@ -17,7 +17,7 @@ chmod 755 setup.sh
 
 ./setup.sh
 
-Create a line seperated list of target IP Ranges IE:
+--Create a line seperated list of target IP Ranges IE--
 ip.x.x.x/24
 ip.x.x.x/31
 ip.x.x.x/23
