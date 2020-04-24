@@ -7,7 +7,7 @@ import ipaddress
 import os
 from tabulate import tabulate
 from collections import OrderedDict
-print('MUST RUN AS ROOT!!! No SUDO!!!)
+print('MUST RUN AS ROOT!!! No SUDO!!!')
 #making a dictionary to store a list
 #KEY = IP Address
 #Values = [transport_protocol,up_ports_list]
