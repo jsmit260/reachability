@@ -11,7 +11,8 @@ from collections import OrderedDict
 #making a dictionary to store a list
 #KEY = IP Address
 #Values = [transport_protocol,up_ports_list]
-
+if len(sys.argv)==1:
+    print('USAGE: ./reachy.py [TARGET_RANGES_LINE_SEPERATED_LIST_FILE_NAME]\n\n\n')
 print('Scanning from:\n')
 os.system("ifconfig")
 os.system("updatedb")
