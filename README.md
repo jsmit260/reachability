@@ -10,7 +10,7 @@ Are the target ranges reachable?
 # FAST-PORTSWEEP.PY
 This script is made with the assumption that you are on a debian based linux distro.
 
-Steps for use:
+# Steps for use (The LONG Way):
 
 sudo git clone https://github.com/jsmit260/reachability.git
 
@@ -24,8 +24,9 @@ sudo chmod 755 setup.sh
 Create a line seperated list of target IP Ranges (IE: x.x.x.x/24).
 
 
-Then:
-sudo ./fast-portsweep.py [target.list]
+# OR THE SHORT WAY
+> sudo git clone https://github.com/jsmit260/reachability.git&&cd reachability&&sudo chmod 755 setup.sh
+>sudo ./fast-portsweep.py [target.list]
 
 # FOLLOW THE DOGE TO WATCH THE DEMO (click on the dog)
 [![Watch the video](https://i.imgur.com/EVvpwLb.jpg)](https://www.youtube.com/watch?v=EpbwpMsnZDI)
