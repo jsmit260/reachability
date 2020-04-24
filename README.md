@@ -21,6 +21,7 @@ ip.x.x.x/23
 Then:
 ./fast-portsweep.py [target.list]
 
+-- FOLLOW THE DOGE TO WATCH THE DEMO --
 [![Watch the video](https://i.imgur.com/EVvpwLb.jpg)](https://www.youtube.com/watch?v=EpbwpMsnZDI)
 
 
