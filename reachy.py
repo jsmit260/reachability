@@ -11,8 +11,8 @@ from collections import OrderedDict
 #making a dictionary to store a list
 #KEY = IP Address
 #Values = [transport_protocol,up_ports_list]
-if len(sys.argv)==1:
-    print('USAGE: ./reachy.py [TARGET_RANGES_LINE_SEPERATED_LIST_FILE_NAME]\n\n\n')
+if len(sys.argv[1]) <= 0:
+    print('USAGE: ./reachy.py [TARGET_RANGES_LINE_SEPERATED_LIST_FILE_NAME] [CUSTOM RATE, ELSE 10k PPS Default]\n\n\n')
 print('Scanning from:\n')
 os.system("ifconfig")
 os.system("updatedb")
@@ -36,7 +36,14 @@ scan_resultz={}
 range_resultz={}
 nm = masscan.PortScanner()
 # SCAN TOP 100 Ports
-nm.scan(str(my_ranges[0]).strip("[]"), ports='7,9,13,21-23,25-26,37,53,79-81,88,106,110-111,113,119,135,139,143-144,179,199,389,427,443-445,465,513-515,543-544,548,554,587,631,646,873,990,993,995,1025-1029,1110,1433,1720,1723,1755,1900,2000-2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5357,5432,5631,5666,5800,5900,6000-6001,6646,7070,8000,8008-8009,8080-8081,8443,8888,9100,9999-10000,32768,49152-49157',arguments='--max-rate 300000')
+#Check if user passes a rate. If no rate then DEFAULT SCAN RATE IS SET TO 10K/PacketsPerSecond
+if len(sys.argv[2]) > 0:
+    nm.scan(str(my_ranges[0]).strip("[]"), ports='7,9,13,21-23,25-26,37,53,79-81,88,106,110-111,113,119,135,139,143-144,179,199,389,427,443-445,465,513-515,543-544,548,554,587,631,646,873,990,993,995,1025-1029,1110,1433,1720,1723,1755,1900,2000-2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5357,5432,5631,5666,5800,5900,6000-6001,6646,7070,8000,8008-8009,8080-8081,8443,8888,9100,9999-10000,32768,49152-49157',arguments='--max-rate sys.argv[2]')
+#if rate is NOT given by user then use default 10k PPS
+else:
+    nm.scan(str(my_ranges[0]).strip("[]"), ports='7,9,13,21-23,25-26,37,53,79-81,88,106,110-111,113,119,135,139,143-144,179,199,389,427,443-445,465,513-515,543-544,548,554,587,631,646,873,990,993,995,1025-1029,1110,1433,1720,1723,1755,1900,2000-2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5357,5432,5631,5666,5800,5900,6000-6001,6646,7070,8000,8008-8009,8080-8081,8443,8888,9100,9999-10000,32768,49152-49157',arguments='--max-rate 10000')
+
+
 for eachIP in nm.scan_result['scan'].keys():
     for eachRange in my_ranges[1]:
         if ipaddress.ip_address(eachIP) in eachRange.hosts():
