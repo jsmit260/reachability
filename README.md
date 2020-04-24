@@ -10,7 +10,7 @@ These scripts assume you are on a debian linux distro and have internet access
 Are the target ranges reachable?
 
 # FAST-PORTSWEEP.PY
-This script is made with the assumption that you are on a debian based linux distro.
+This answers....Are the target ranges reachable?
 
 # Steps for use (The LONG Way):
 
