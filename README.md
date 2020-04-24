@@ -2,9 +2,9 @@
 # USE AT OWN RISK -- IN NO WAY AM I RESPONSIBLE FOR ANY DAMAGES INCURRED -- IF YOU DON'T HAVE EXPLICT PERMISSION BY THE NETWORK OWNER DO NOT AND I REPEAT DO NOT LAUNCH THIS 
 --END DISCLAIMER--
 
-# reachability
 Are the target ranges reachable?
 
+# FAST_PORTSWEEP.PY
 These script is made with the assumption that you are on a debian based linux distro.
 
 Steps for use:
