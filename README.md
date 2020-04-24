@@ -9,7 +9,7 @@ These script is made with the assumption that you are on a debian based linux di
 
 Steps for use:
 
-git clone [this]
+git clone https://github.com/jsmit260/reachability.git
 
 cd into directory
 
