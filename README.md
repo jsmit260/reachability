@@ -4,7 +4,7 @@
 
 Are the target ranges reachable?
 
-# FAST_PORTSWEEP.PY
+# FAST-PORTSWEEP.PY
 These script is made with the assumption that you are on a debian based linux distro.
 
 Steps for use:
