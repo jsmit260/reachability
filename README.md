@@ -21,7 +21,7 @@ ip.x.x.x/23
 Then:
 ./fast-portsweep.py [target.list]
 
-[![Watch the video](https://imgur.com/gallery/q7VKiiK)](https://www.youtube.com/watch?v=EpbwpMsnZDI)
+[![Watch the video](https://i.imgur.com/EVvpwLb.jpg)](https://www.youtube.com/watch?v=EpbwpMsnZDI)
 
 
 
