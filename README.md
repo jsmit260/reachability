@@ -21,7 +21,7 @@ chmod 755 setup.sh
 # ./setup.sh
 (This script makes sure you have everything you need to run fast-portsweep.py)
 
-Create a line seperated list of target IP Ranges.
+Create a line seperated list of target IP Ranges (IE: x.x.x.x/24).
 
 
 Then:
