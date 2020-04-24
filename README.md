@@ -26,6 +26,7 @@ Create a line seperated list of target IP Ranges (IE: x.x.x.x/24).
 
 # OR THE SHORT WAY
 > sudo git clone https://github.com/jsmit260/reachability.git&&cd reachability&&sudo chmod 755 setup.sh
+
 >sudo ./fast-portsweep.py [target.list]
 
 # FOLLOW THE DOGE TO WATCH THE DEMO (click on the dog)
