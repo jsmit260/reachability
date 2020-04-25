@@ -40,7 +40,7 @@ Fire at will:
 
 
 # FOLLOW THE DOGE TO WATCH THE DEMO (click on the dog)
-[![Watch the video](https://i.imgur.com/EVvpwLb.jpg)](https://www.youtube.com/watch?v=EpbwpMsnZDI)
+[![Watch the video](https://i.imgur.com/EVvpwLb.jpg)](https://youtu.be/VHPm6h8ZAeM)
 
 
 
