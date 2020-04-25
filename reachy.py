@@ -82,7 +82,7 @@ text_file2=open("reachy-outfile.tsv",'w')
 text_file2.write(content2)
 text_file2.close()
 
-text_file= open("discovery_sweep.tsv",'a')
+text_file= open("reachy-outfile.tsv",'a')
 text_file.write('\n\n'+content)
 text_file.close()
 
