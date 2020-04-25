@@ -78,7 +78,7 @@ content2 =tabulate(df2.sort_index(),headers=('IP Range','Live Nodes'),tablefmt='
 # PRINT Indivdual IP Address and associate up ports TO SCREEN
 print(tabulate(df.sort_index(),headers=('IP Address','Protocol','Open Ports'),tablefmt='grid'))
 content = tabulate(df.sort_index(),headers=('IP Address','Protocol','Open Ports'),tablefmt='tsv')
-text_file2=open("discovery_sweep.tsv",'w')
+text_file2=open("reachy-outfile.tsv",'w')
 text_file2.write(content2)
 text_file2.close()
 
@@ -86,4 +86,4 @@ text_file= open("discovery_sweep.tsv",'a')
 text_file.write('\n\n'+content)
 text_file.close()
 
-print("Tables are saved in current directory as: discovery_sweep.tsv")
+print("Tables are saved in current directory as: reachy-outfile.tsv")
