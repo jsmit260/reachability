@@ -1,5 +1,6 @@
 #! /usr/bin/python3
 import time
+import datetime 
 import sys
 import masscan
 import pandas as pd
@@ -75,20 +76,35 @@ for k,v in range_resultz.items():
     
 #print(range_resultz)
 df2 = pd.Series(range_resultz)
-print(tabulate(df2.sort_index(),headers=('IP Range', 'Live Nodes'),tablefmt='grid'))
-content2 =tabulate(df2.sort_index(),headers=('IP Range','Live Nodes'),tablefmt='tsv')
+print(tabulate(df2.sort_values(),headers=('IP Range', 'Live Nodes'),tablefmt='grid'))
+content2 =tabulate(df2.sort_values(),headers=('IP Range','Live Nodes'),tablefmt='tsv')
 
  
 
 # PRINT Indivdual IP Address and associate up ports TO SCREEN
 print(tabulate(df.sort_index(),headers=('IP Address','Protocol','Open Ports'),tablefmt='grid'))
 content = tabulate(df.sort_index(),headers=('IP Address','Protocol','Open Ports'),tablefmt='tsv')
-text_file2=open("reachy-outfile.tsv",'w')
+filename = '/logs/reachy-outfile-run-at-%s.tsv'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M')
+text_file2=open(filename,'w')
 text_file2.write(content2)
 text_file2.close()
 
-text_file= open("reachy-outfile.tsv",'a')
+text_file= open(filename,'a')
 text_file.write('\n\n'+content)
 text_file.close()
 
-print("Tables are saved in current directory as: reachy-outfile.tsv")
+print("\nTables are saved in current directory as: ",filename)
+
+# Create a list for importing into nessus as targets for next round of scans
+other_filename = '/logs/reachy-uphosts-run-at-%s.list'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M')
+text_file3 = open(other_filename,'w')
+for eachIP in nm.scan_result['scan'].keys():
+    text_file3.write(eachIP+'\n')
+
+text_file3.close()
+
+print("List file of up-hosts saved in current directory as, ", other_filename)
+
+
+
+
