@@ -84,7 +84,6 @@ content2 =tabulate(df2.sort_values(),headers=('IP Range','Live Nodes'),tablefmt=
 # PRINT Indivdual IP Address and associate up ports TO SCREEN
 print(tabulate(df.sort_index(),headers=('IP Address','Protocol','Open Ports'),tablefmt='grid'))
 content = tabulate(df.sort_index(),headers=('IP Address','Protocol','Open Ports'),tablefmt='tsv')
-#os.system('mkdir logs')
 filename = 'logs/reachy-outfile-run-at-%s.tsv'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M')
 text_file2=open(filename,'w')
 text_file2.write(content2)
@@ -94,7 +93,7 @@ text_file= open(filename,'a')
 text_file.write('\n\n'+content)
 text_file.close()
 
-print("\nTables are saved in current directory as: ",filename)
+print("\nTables are saved as: ",filename)
 
 # Create a list for importing into nessus as targets for next round of scans
 other_filename = 'logs/reachy-uphosts-run-at-%s.list'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M')
@@ -104,7 +103,7 @@ for eachIP in nm.scan_result['scan'].keys():
 
 text_file3.close()
 
-print("List file of up-hosts saved in current directory as, ", other_filename)
+print("List file of up-hosts saved as, ", other_filename)
 
 
 
