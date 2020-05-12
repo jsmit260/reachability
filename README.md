@@ -5,7 +5,9 @@
 THIS IS PYTHON WRAPPED AROUND MASSCAN (https://github.com/robertdavidgraham/masscan)
 # -- END DISCLAIMER--
 
-These scripts assume you are on a debian linux distro and have internet access
+These scripts assume you are on a debian linux distro and have internet access.
+
+If running in a VMware Virtual Machine, make sure you are using a bridged interace. Do not use a VMware NAT interface as when tested it crashes the virutal NAT even with slow pps as low as 1,000.
 
 Are the target ranges reachable?
 
