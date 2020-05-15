@@ -8,10 +8,7 @@ import ipaddress
 import os
 from tabulate import tabulate
 from collections import OrderedDict
-print('MUST RUN AS ROOT!!! No SUDO!!!')
-#making a dictionary to store a list
-#KEY = IP Address
-#Values = [transport_protocol,up_ports_list]
+print('\nMUST RUN AS ROOT!!! No SUDO!!!\n')
 if len(sys.argv) == 2:
     print("You are scanning ranges in file named: ",sys.argv[1])
 elif len(sys.argv) == 3:
@@ -19,11 +16,9 @@ elif len(sys.argv) == 3:
 else:
     print('MUST RUN AS ROOT!!! No SUDO!!!\nUSAGE: ./reachy.py [TARGET_RANGES_LINE_SEPERATED_LIST_FILE_NAME] [CUSTOM RATE, ELSE 10k PPS by DEFAULT]\n\n\n')
     
-print('Scanning from:\n')
-os.system("ifconfig")
-os.system("updatedb")
-#os.system("sed -i 's/logger.debug/#&/' $(locate masscan.py)")
-time.sleep(2)
+print('\nScanning from:\n')
+os.system("ip -br -c address|grep -v lo")
+time.sleep(1)
 
 def get_ranges():
     list_of_ip_ranges=[]
@@ -84,7 +79,7 @@ content2 =tabulate(df2.sort_values(),headers=('IP Range','Live Nodes'),tablefmt=
 # PRINT Indivdual IP Address and associate up ports TO SCREEN
 print(tabulate(df.sort_index(),headers=('IP Address','Protocol','Open Ports'),tablefmt='grid'))
 content = tabulate(df.sort_index(),headers=('IP Address','Protocol','Open Ports'),tablefmt='tsv')
-filename = 'logs/reachy-outfile-run-at-%s.tsv'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M')
+filename = 'logs/reachy-outfile-run-on-%s.tsv'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M')
 text_file2=open(filename,'w')
 text_file2.write(content2)
 text_file2.close()
@@ -93,17 +88,27 @@ text_file= open(filename,'a')
 text_file.write('\n\n'+content)
 text_file.close()
 
-print("\nTables are saved as: ",filename)
+print("\nTables are saved as:\t\t\t\t",filename,'\n')
 
 # Create a list for importing into nessus as targets for next round of scans
-other_filename = 'logs/reachy-uphosts-run-at-%s.list'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M')
+other_filename = 'logs/reachy-uphosts-run-on-%s.list'%datetime.datetime.now().strftime('%Y-%m-%d-%H%M')
 text_file3 = open(other_filename,'w')
+
+sort_my_list=[]
 for eachIP in nm.scan_result['scan'].keys():
+    sortme=ipaddress.ip_address(eachIP)
+    sort_my_list.append(sortme)
+
+return_sorted_ips_to_strings=[]
+for eachIP in sorted(sort_my_list):
+    return_sorted_ips_to_strings.append(str(eachIP))
+    
+for eachIP in return_sorted_ips_to_strings:
     text_file3.write(eachIP+'\n')
 
 text_file3.close()
 
-print("List file of up-hosts saved as, ", other_filename)
+print("List file of up-hosts saved as:\t\t\t", other_filename,'\n\n')
 
 
 

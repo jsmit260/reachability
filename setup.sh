@@ -8,5 +8,7 @@ pip3 install python-masscan
 pip3 install tabulate
 pip3 install ipaddress
 pip3 install pandas
+pip3 install PyInquirer
 sed -i 's/logger.debug/#&/' $(locate masscan.py)
 chmod 755 reachy.py
+chmod 755 ireach.py
