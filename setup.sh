@@ -11,4 +11,4 @@ pip3 install pandas
 pip3 install PyInquirer
 sed -i 's/logger.debug/#&/' $(locate masscan.py)
 chmod 755 reachy.py
-chmod 755 ireach.py
+chmod 755 ireachy.py
