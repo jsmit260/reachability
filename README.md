@@ -7,11 +7,15 @@ THIS IS PYTHON WRAPPED AROUND MASSCAN (https://github.com/robertdavidgraham/mass
 
 These scripts assume you are on a debian linux distro and have internet access.
 
-Are the target ranges reachable?
+#Questions the script answers?
+Are the target ranges reachable? If so how many in each range? If that isn't enough, what IP addresses are responding an on which ports?
+
+#Scenerios
+1. You are given access to a network or set of networks and you are told to pen test team. To verify you have access to all ranges you must go through a process of ping sweeping and port scanning then comparing your IP address that returned open ports or responded to pings to determine which ranges you have access to. Sometimes the list of ranges is pages long. This script solves the problem of manual cross comparison between the results of scan data and the list of CIDR ranges for which you are supposed to be granted access. Many times you don't get access to everything in the first go around and this process is time consuming.
+
+2. You are on a Pen Test or you are simply assigned the task of ensuring that proper network segmentation is in place between a list of networks. This script makes it a simply and easy process with excel output evidence for the management overlords.
 
 # reachy.py
-This answers....Are the target ranges reachable?
-
 # EASYMODE - COPY/PASTA (into your terminal):
 [WARNING : DO NOT RUN ON A CORP Attached Network unless you are meaning too. ]
 This command will download the tool, set it up, and run it on the first network interface you are attached to as a /24.
