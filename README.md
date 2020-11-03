@@ -27,7 +27,7 @@ This command will download the tool, set it up, and run it on the first network 
 
 > sudo ./setup.sh
 
-(This script makes sure you have everything you need to run fast-portsweep.py)
+(This script makes sure you have everything you need to run reachy.py)
 
 Create a line seperated list of target IP Ranges (IE: x.x.x.x/24).
 > echo "127.0.0.1/32" >> targets.list
